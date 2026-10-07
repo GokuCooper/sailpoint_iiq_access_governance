@@ -1,0 +1,13 @@
+employeeId,firstName,lastName,displayName,email,department,jobTitle,managerId,location,hireDate,employmentStatus,employeeType,costCenter
+E1001,Ava,Brooks,Ava Brooks,ava.brooks@iamlab.local,Finance,Financial Analyst,E1003,Atlanta,20260105,Active,Employee,CC100
+E1002,Marcus,Reed,Marcus Reed,marcus.reed@iamlab.local,IT,Systems Administrator,E1003,Atlanta,20250310,Active,Employee,CC200
+E1003,Priya,Shah,Priya Shah,priya.shah@iamlab.local,Operations,Director of Operations,,Atlanta,20230612,Active,Employee,CC300
+E1004,Jordan,Hayes,Jordan Hayes,jordan.hayes@iamlab.local,IT,Help Desk Analyst,E1003,Atlanta,20260928,Inactive,Employee,CC200
+E1005,Nia,Carter,Nia Carter,nia.carter@iamlab.local,Finance,Accounts Payable Specialist,E1003,Atlanta,20260915,Active,Employee,CC100
+E1006,Derrick,Coleman,Derrick Coleman,derrick.coleman@iamlab.local,Finance,Accounts Payable Manager,E1003,Atlanta,20240219,Active,Employee,CC100
+E1007,Elena,Vasquez,Elena Vasquez,elena.vasquez@iamlab.local,Finance,Accounts Payable Specialist,E1006,Atlanta,20250804,Active,Employee,CC100
+E1008,Simone,Whitfield,Simone Whitfield,simone.whitfield@iamlab.local,Human Resources,HR Manager,E1003,Atlanta,20231113,Active,Employee,CC400
+E1009,Tobias,Grant,Tobias Grant,tobias.grant@iamlab.local,Human Resources,Payroll Specialist,E1008,Atlanta,20250120,Active,Employee,CC400
+E1010,Hannah,Kim,Hannah Kim,hannah.kim@iamlab.local,Human Resources,HR Generalist,E1008,Atlanta,20260302,Active,Employee,CC400
+E1011,Caleb,Okafor,Caleb Okafor,caleb.okafor@iamlab.local,IT,Systems Administrator,E1003,Atlanta,20240916,Active,Employee,CC200
+E1012,Renee,Dawson,Renee Dawson,renee.dawson@iamlab.local,Operations,Internal Auditor,E1003,Atlanta,20250609,Active,Employee,CC300

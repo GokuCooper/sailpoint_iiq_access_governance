@@ -1,0 +1,27 @@
+accountId,employeeId,displayName,email,accessGroup,accountStatus
+ava.brooks,E1001,Ava Brooks,ava.brooks@iamlab.local,ERP_Base_User,Active
+caleb.okafor,E1011,Caleb Okafor,caleb.okafor@iamlab.local,ERP_Base_User,Active
+caleb.okafor,E1011,Caleb Okafor,caleb.okafor@iamlab.local,ERP_User_Admin,Active
+caleb.okafor,E1011,Caleb Okafor,caleb.okafor@iamlab.local,PAY_Edit_Payroll,Active
+derrick.coleman,E1006,Derrick Coleman,derrick.coleman@iamlab.local,ERP_Base_User,Active
+derrick.coleman,E1006,Derrick Coleman,derrick.coleman@iamlab.local,AP_Approve_Payment,Active
+elena.vasquez,E1007,Elena Vasquez,elena.vasquez@iamlab.local,ERP_Base_User,Active
+elena.vasquez,E1007,Elena Vasquez,elena.vasquez@iamlab.local,AP_Create_Vendor,Active
+elena.vasquez,E1007,Elena Vasquez,elena.vasquez@iamlab.local,AP_Enter_Invoice,Active
+hannah.kim,E1010,Hannah Kim,hannah.kim@iamlab.local,ERP_Base_User,Active
+jordan.hayes,E1004,Jordan Hayes,jordan.hayes@iamlab.local,ERP_Base_User,Active
+kevin.marsh,C2001,Kevin Marsh,kevin.marsh@iamlab.local,ERP_Base_User,Active
+kevin.marsh,C2001,Kevin Marsh,kevin.marsh@iamlab.local,AP_Enter_Invoice,Active
+marcus.reed,E1002,Marcus Reed,marcus.reed@iamlab.local,ERP_Base_User,Active
+marcus.reed,E1002,Marcus Reed,marcus.reed@iamlab.local,ERP_User_Admin,Active
+marcus.reed,E1002,Marcus Reed,marcus.reed@iamlab.local,ERP_Audit_Log_Review,Active
+nia.carter,E1005,Nia Carter,nia.carter@iamlab.local,ERP_Base_User,Active
+nia.carter,E1005,Nia Carter,nia.carter@iamlab.local,AP_Create_Vendor,Active
+nia.carter,E1005,Nia Carter,nia.carter@iamlab.local,AP_Enter_Invoice,Active
+nia.carter,E1005,Nia Carter,nia.carter@iamlab.local,AP_Approve_Payment,Active
+priya.shah,E1003,Priya Shah,priya.shah@iamlab.local,ERP_Base_User,Active
+renee.dawson,E1012,Renee Dawson,renee.dawson@iamlab.local,ERP_Base_User,Active
+renee.dawson,E1012,Renee Dawson,renee.dawson@iamlab.local,ERP_Audit_Log_Review,Active
+simone.whitfield,E1008,Simone Whitfield,simone.whitfield@iamlab.local,ERP_Base_User,Active
+tobias.grant,E1009,Tobias Grant,tobias.grant@iamlab.local,ERP_Base_User,Active
+tobias.grant,E1009,Tobias Grant,tobias.grant@iamlab.local,PAY_Edit_Payroll,Active
