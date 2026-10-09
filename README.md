@@ -237,7 +237,7 @@ The orphan account sat outside the campaign, since kevin.marsh has no manager to
 |---|---|---|---|
 | Access Review Signoff Live Report | Who signed each review and when | 97 | `dknQ42026AccessReviewSignoff.pdf` and `.csv` |
 | Access Review Decision Report | Every decision: 17 approved, 7 revoked, 0 exceptions, 0 undecided | 98 | `dknQ42026AccessReviewDecisions.pdf` |
-| Revocation Live Report | Each revocation and its status | 99 and 102 | `dknQ42026Revocations.pdf` and `.csv` |
+| Revocation Live Report | Each revocation and its status, ending at 7 of 7 Finished | 99, 102, and 104 to 106 | `dknQ42026Revocations.pdf` and `.csv`, plus the October 9 rerun |
 | Policy Violation Report | Zero current violations | 100 | `dknPolicyViolationsCurrent.pdf` and `.csv` |
 
 ![Decision report](screenshots/98_report_access_review_decisions.png)
@@ -326,11 +326,11 @@ This is the one I learned the most from.
 
 **Lesson:** A passing test does not prove a control is enabled. Here the test tool changed the state of the thing it tested. I only caught it because I had an expected count of 3 and did not accept 2. After any simulation I now check State on the policy and Disabled on every rule before saving.
 
-### 7. Access is gone, but the revocation report has not caught up
+### 7. Access was gone, but the revocation report took two days to agree
 
-**What happened:** The Revocation Live Report lists 7 lines. Twenty minutes after I completed the work item, 3 read Finished and 4 read Open. I ran it twice with the same result.
+**What happened:** The Revocation Live Report lists 7 lines. Twenty minutes after I completed the work item, 3 read Finished and 4 read Open. I ran it twice that day with the same result.
 
-| Lines | Status |
+| Lines | Status on October 7 |
 |---|---|
 | 3 role and entitlement lines IdentityIQ linked to the violations | Finished |
 | 3 violation lines and Jordan's ERP Base Access, the same 4 that went into the work item | Open |
@@ -339,13 +339,19 @@ This is the one I learned the most from.
 
 **Root cause layer:** Verification bookkeeping, not access.
 
-**What I know:** The access is gone. The aggregation deleted the rows, the refresh found zero violations, and the Policy Violation report returned nothing. The Perform Maintenance task has "Scan for completed revocations" enabled, so IdentityIQ does have a background check for this.
+**How I worked it:** I did not reopen the work item or touch the certification. I checked the source of truth first. The aggregation had deleted the rows, the refresh found zero violations, and the Policy Violation report returned nothing, so the access was gone. Then I looked for the mechanism. The Perform Maintenance task has "Scan for completed revocations" enabled, which told me IdentityIQ had its own background check for this and that the right move was to wait and rerun.
 
-**What I do not know yet:** How often that scan evaluates a certification. My working explanation is that completing a work item by hand does not mark a line Finished, and that the scan does it on a slower schedule than the five minute maintenance cycle. I have not confirmed that.
+![Background scan enabled](screenshots/103_perform_maintenance_scan_for_completed_revocations.png)
 
-**Open item:** Rerun the report the next day and record the result here.
+**Result:** I reran the report two days later, on October 9. All 7 lines read Finished, with no further action from me.
 
-**Lesson:** A revocation has three stages. The manager decides, someone executes, and the system verifies. When a status column and the source system disagree, the source system is the evidence.
+![Revocation report two days later](screenshots/104_report_revocations_rerun_two_days_later.png)
+
+The report does not fit on one screen, so the remaining lines are in screenshots 105 and 106.
+
+**What I still do not know:** Exactly when the status flipped. It happened somewhere between 20 minutes and 2 days after the work item was completed, so the scan runs on a slower cycle than the five minute maintenance loop I saw with the Joiner.
+
+**Lesson:** A revocation has three stages. The manager decides, someone executes, and the system verifies. Completing a work item by hand closes the second stage, and IdentityIQ closes the third on its own schedule. When a status column and the source system disagree, the source system is the evidence, and the status column deserves a second look later before anyone forces it.
 
 ## Result
 
@@ -380,7 +386,7 @@ Jordan's record shows two controls from two different weeks landing on the same 
 ## Known gaps and next steps
 
 - **Nobody reviewed the top manager or the orphan.** A manager certification only covers people who have a manager. Priya Shah and kevin.marsh were both outside it. In production I would add an application owner certification and a scheduled uncorrelated account report.
-- **The revocation report is still catching up.** See Snag 7.
+- **Verification lag on manual remediation.** The revocation report took up to two days to show all 7 lines Finished. See Snag 7. In production I would agree a verification window with audit up front.
 - **Remediation was manual.** DKN_ERP is a read only file. A real connector with provisioning would let IdentityIQ remove access itself.
 - **One person played every part.** I was the administrator, all three managers, and the application owner. The separation between those jobs is real in the tool and simulated in the lab.
 - **Role mining is not covered.** I designed the roles top down from job titles. The Role Mining tab is the natural next exercise.
@@ -407,7 +413,7 @@ Jordan's record shows two controls from two different weeks landing on the same 
 ```
 sailpoint_iiq_access_governance/
 ├── README.md
-├── screenshots/        104 images, numbered 01 to 103 plus 96b
+├── screenshots/        107 images, numbered 01 to 106 plus 96b
 └── evidence/
     ├── hr_feed.csv
     ├── erp_accounts_before_remediation.csv
@@ -528,3 +534,6 @@ All names, accounts, and email addresses are fictional test data on the `iamlab.
 | 101 | `101_certification_final_state.png` | Campaign final state |
 | 102 | `102_report_revocations_3_finished_4_open_second_run.png` | Revocation report, second run |
 | 103 | `103_perform_maintenance_scan_for_completed_revocations.png` | Background scan enabled |
+| 104 | `104_report_revocations_rerun_two_days_later.png` | Rerun, Caleb Okafor and Jordan Hayes lines |
+| 105 | `105_report_revocations_rerun_marcus_lines_finished.png` | Rerun, Marcus Reed lines |
+| 106 | `106_report_revocations_rerun_nia_lines_finished.png` | Rerun, Nia Carter lines |
